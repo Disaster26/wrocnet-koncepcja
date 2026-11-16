@@ -11,9 +11,10 @@
 <link rel="preload" as="image" href="img/hero-m-480.webp" imagesrcset="img/hero-m-480.webp 480w, img/hero-m-800.webp 800w" imagesizes="100vw" media="(max-width:700px)" fetchpriority="high">
 <link rel="preload" as="image" href="img/hero-1600.webp" imagesrcset="img/hero-1024.webp 1024w, img/hero-1600.webp 1600w, img/hero-2400.webp 2400w" imagesizes="100vw" media="(min-width:701px)" fetchpriority="high">
 <link rel="preload" as="font" type="font/woff2" href="fonts/dm-rdzen.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/dm-pl.woff2" crossorigin>
 <style>
-@font-face{font-family:"DM Sans";font-weight:400 700;font-display:swap;src:url(fonts/dm-rdzen.woff2) format("woff2");unicode-range:U+0020-007E,U+00A0-00FF,U+2013-2026,U+2122,U+2192}
-@font-face{font-family:"DM Sans";font-weight:400 700;font-display:swap;src:url(fonts/dm-pl.woff2) format("woff2");unicode-range:U+0104-0107,U+0118-0119,U+0141-0144,U+015A-015B,U+0179-017C}
+@font-face{font-family:"DM Sans";font-weight:400 700;font-display:optional;src:url(fonts/dm-rdzen.woff2) format("woff2");unicode-range:U+0020-007E,U+00A0-00FF,U+2013-2026,U+2122,U+2192}
+@font-face{font-family:"DM Sans";font-weight:400 700;font-display:optional;src:url(fonts/dm-pl.woff2) format("woff2");unicode-range:U+0104-0107,U+0118-0119,U+0141-0144,U+015A-015B,U+0179-017C}
 :root{--n:#0D2B4E;--nd:#0A2240;--o:#F76A0C;--ob:#D85406;--ob2:#BF4A05;--b:#1A5FA8;--t:#12233A;--s:#4A5A6A;--g:#EEF2F6;--l:#D6DEE7;--hh:70px;--gut:clamp(16px,3.4vw,60px);--w:1320px}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:var(--hh);-webkit-text-size-adjust:100%}
@@ -173,7 +174,7 @@ section{padding:clamp(64px,8vw,120px) 0}
 .stopka .g{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px 40px}
 .stopka .logo{color:#fff}
 .stopka .opis{margin-top:12px;max-width:26em}
-.stopka h4{margin:0 0 10px;color:#fff;font-size:15px;font-weight:600}
+.stopka .fh{margin:0 0 10px;color:#fff;font-size:15px;font-weight:600}
 .stopka a{text-decoration:none}
 .stopka a:hover{color:#fff}
 .stopka p+p{margin-top:4px}
@@ -282,22 +283,22 @@ section{padding:clamp(64px,8vw,120px) 0}
     </div>
     <div class="tor" id="tor">
       <article class="karta">
-        <div class="foto"><img src="img/internet-480.webp" srcset="img/internet-480.webp 480w, img/internet-800.webp 800w" sizes="(max-width:700px) 80vw, 400px" width="480" height="360" loading="lazy" alt="Kobieta pracuje w domu na laptopie"></div>
+        <div class="foto"><img src="img/internet-480.webp" srcset="img/internet-480.webp 480w, img/internet-640.webp 640w, img/internet-800.webp 800w" sizes="(max-width:700px) 80vw, 400px" width="480" height="360" loading="lazy" alt="Kobieta pracuje w domu na laptopie"></div>
         <div class="tx"><h3>Internet światłowodowy</h3><p>Symetryczne łącze 500 Mb/s albo 1 Gb/s - tyle samo w pobieraniu, co w wysyłaniu. Router Wi-Fi 6, instalacja przez naszych techników.</p>
           <div class="cena"><small>od</small><b>49 zł</b><span>/mies., umowa 24 mies.</span></div></div>
       </article>
       <article class="karta">
-        <div class="foto"><img src="img/pakiety-480.webp" srcset="img/pakiety-480.webp 480w, img/pakiety-800.webp 800w" sizes="(max-width:700px) 80vw, 400px" width="480" height="360" loading="lazy" alt="Kobieta z popcornem ogląda telewizję na kanapie"></div>
+        <div class="foto"><img src="img/pakiety-480.webp" srcset="img/pakiety-480.webp 480w, img/pakiety-640.webp 640w, img/pakiety-800.webp 800w" sizes="(max-width:700px) 80vw, 400px" width="480" height="360" loading="lazy" alt="Kobieta z popcornem ogląda telewizję na kanapie"></div>
         <div class="tx"><h3>Internet + telewizja</h3><p>Światłowód 300 Mb/s, 600 Mb/s lub 1 Gb/s i 122 kanały. Dekoder 4K, przewijanie kanałów i nagrywanie w chmurze.</p>
           <div class="cena"><small>od</small><b>43 zł</b><span>/mies. przez 4 mies., potem 84,90 zł</span></div></div>
       </article>
       <article class="karta">
-        <div class="foto"><img src="img/tv-480.webp" srcset="img/tv-480.webp 480w, img/tv-800.webp 800w" sizes="(max-width:700px) 80vw, 400px" width="480" height="360" loading="lazy" alt="Pilot skierowany w telewizor z siatką kanałów"></div>
+        <div class="foto"><img src="img/tv-480.webp" srcset="img/tv-480.webp 480w, img/tv-640.webp 640w, img/tv-800.webp 800w" sizes="(max-width:700px) 80vw, 400px" width="480" height="360" loading="lazy" alt="Pilot skierowany w telewizor z siatką kanałów"></div>
         <div class="tx"><h3>Telewizja światłowodowa</h3><p>Pięć pakietów: od 72 do 200 kanałów, większość w HD. Pause TV, ulubione, profile domowników i nagrywanie w chmurze.</p>
           <div class="cena"><small>od</small><b>29 zł</b><span>/mies. przez 4 mies., potem 44,90 zł</span></div></div>
       </article>
       <article class="karta">
-        <div class="foto"><img src="img/telefon-480.webp" srcset="img/telefon-480.webp 480w, img/telefon-800.webp 800w" sizes="(max-width:700px) 80vw, 400px" width="480" height="360" loading="lazy" alt="Dłoń dotyka ekranu z oceną usługi"></div>
+        <div class="foto"><img src="img/telefon-480.webp" srcset="img/telefon-480.webp 480w, img/telefon-640.webp 640w, img/telefon-800.webp 800w" sizes="(max-width:700px) 80vw, 400px" width="480" height="360" loading="lazy" alt="Dłoń dotyka ekranu z oceną usługi"></div>
         <div class="tx"><h3>Telefon komórkowy</h3><p>Abonamenty No Limit: rozmowy i SMS-y bez limitu, pakiety danych do 25 GB. Przeniesienie numeru załatwiamy za Ciebie.</p>
           <div class="cena"><small>od</small><b>16,90 zł</b><span>/mies., bez zobowiązań</span></div></div>
       </article>
@@ -393,13 +394,13 @@ section{padding:clamp(64px,8vw,120px) 0}
         <p class="opis">Internet światłowodowy, telewizja i telefon we Wrocławiu. Usługi sieciowe i IT dla firm.</p>
       </div>
       <div>
-        <h4>Biuro Obsługi Klienta</h4>
+        <h3 class="fh">Biuro Obsługi Klienta</h3>
         <p>ul. Podwale 57</p>
         <p>50-039 Wrocław</p>
         <p>pn-pt 9:00-17:00</p>
       </div>
       <div>
-        <h4>Kontakt</h4>
+        <h3 class="fh">Kontakt</h3>
         <p><a href="tel:+48717215151">71 721 51 51</a></p>
         <p><a href="mailto:bok@wrocnet.pl">bok@wrocnet.pl</a></p>
         <p><a href="https://ibok.wrocnet.pl/" rel="noopener">Strefa klienta</a></p>
