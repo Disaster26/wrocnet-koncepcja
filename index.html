@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>WrocNet - internet światłowodowy i telewizja we Wrocławiu</title>
+<meta name="description" content="Lokalny operator z Wrocławia: internet światłowodowy do 1 Gb/s, telewizja, telefon i usługi sieciowe dla firm. BOK ul. Podwale 57, tel. 71 721 51 51.">
+<meta name="theme-color" content="#0D2B4E">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preload" as="image" href="img/hero-m-480.webp" imagesrcset="img/hero-m-480.webp 480w, img/hero-m-800.webp 800w" imagesizes="100vw" media="(max-width:700px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-1600.webp" imagesrcset="img/hero-1024.webp 1024w, img/hero-1600.webp 1600w, img/hero-2400.webp 2400w" imagesizes="100vw" media="(min-width:701px)" fetchpriority="high">
+<link rel="preload" as="font" type="font/woff2" href="fonts/dm-rdzen.woff2" crossorigin>
+<style>
+@font-face{font-family:"DM Sans";font-weight:400 700;font-display:swap;src:url(fonts/dm-rdzen.woff2) format("woff2");unicode-range:U+0020-007E,U+00A0-00FF,U+2013-2026,U+2122,U+2192}
+@font-face{font-family:"DM Sans";font-weight:400 700;font-display:swap;src:url(fonts/dm-pl.woff2) format("woff2");unicode-range:U+0104-0107,U+0118-0119,U+0141-0144,U+015A-015B,U+0179-017C}
+:root{--n:#0D2B4E;--nd:#0A2240;--o:#F76A0C;--ob:#D85406;--ob2:#BF4A05;--b:#1A5FA8;--t:#12233A;--s:#4A5A6A;--g:#EEF2F6;--l:#D6DEE7;--hh:70px;--gut:clamp(16px,3.4vw,60px);--w:1320px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--hh);-webkit-text-size-adjust:100%}
+body{margin:0;font-family:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:17px;line-height:1.6;color:var(--t);background:#fff;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{margin:0;line-height:1.08;letter-spacing:-.022em;font-weight:700}
+h1{font-size:clamp(40px,min(5vw,8.6vh),82px);max-width:13ch}
+h2{font-size:clamp(31px,3.4vw,52px)}
+h3{font-size:21px;line-height:1.2;letter-spacing:-.01em}
+p{margin:0}
+.wrap{width:min(var(--w),100% - 2*var(--gut));margin-inline:auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--ob);color:#fff;font-weight:700;font-size:19px;text-decoration:none;padding:17px 28px;border-radius:999px 999px 999px 999px;line-height:1.2;border:0;cursor:pointer;font-family:inherit;transition:background .2s,transform .2s}
+.btn:hover{background:var(--ob2)}
+.btn:active{transform:translateY(1px)}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* znak: przęsło - lina miedzy pylonami z punktem swiatla */
+.znak{width:34px;height:24px;flex:none}
+
+/* naglowek */
+.top{position:sticky;top:0;z-index:50;height:var(--hh);background:#fff;border-bottom:1px solid transparent;transition:border-color .2s,box-shadow .2s}
+.top.sc{border-bottom-color:var(--l);box-shadow:0 6px 24px rgba(10,34,64,.07)}
+.top .wrap{height:100%;display:flex;align-items:center;gap:26px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--n);font-weight:700;font-size:25px;letter-spacing:-.03em;line-height:1}
+.menu{display:flex;gap:2px;margin-left:auto;align-items:center}
+.menu a{text-decoration:none;font-weight:500;font-size:16px;padding:10px 13px;border-radius:6px;color:var(--t)}
+.menu a:hover{background:var(--g)}
+.menu a.on{color:var(--b)}
+.menu .sk{color:var(--b);font-weight:600}
+.top .tel{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:17px;color:#fff;background:var(--n);padding:11px 18px;border-radius:999px;white-space:nowrap}
+.top .tel:hover{background:var(--nd)}
+.top .tel svg{width:17px;height:17px}
+.burger{display:none;margin-left:auto;width:46px;height:46px;border:1px solid var(--l);background:#fff;border-radius:8px;cursor:pointer;padding:0;align-items:center;justify-content:center}
+.burger i{display:block;width:20px;height:2px;background:var(--t);position:relative;transition:background .2s}
+.burger i:before,.burger i:after{content:"";position:absolute;left:0;width:20px;height:2px;background:var(--t);transition:transform .25s}
+.burger i:before{top:-6px}.burger i:after{top:6px}
+.top.open .burger i{background:transparent}
+.top.open .burger i:before{transform:translateY(6px) rotate(45deg)}
+.top.open .burger i:after{transform:translateY(-6px) rotate(-45deg)}
+
+/* pierwszy ekran */
+.hero{padding:0;position:relative;min-height:calc(100svh - var(--hh));display:flex;flex-direction:column;color:#fff;background:#1b2f48;overflow:hidden}
+.hero picture,.hero picture img{position:absolute;inset:0;width:100%;height:100%}
+.hero picture img{object-fit:cover;object-position:30% 40%}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,34,64,.92) 0%,rgba(10,34,64,.6) 32%,rgba(10,34,64,0) 62%),linear-gradient(90deg,rgba(10,34,64,.55) 0%,rgba(10,34,64,0) 55%)}
+.hero .in{position:relative;z-index:3;width:min(var(--w),100% - 2*var(--gut));margin:auto auto 0;padding:64px 0 clamp(44px,7vh,84px)}
+.lina{display:block;width:min(560px,100%);height:58px;margin:0 0 18px -4px;overflow:visible}
+.lina .baza{fill:none;stroke:rgba(255,255,255,.55);stroke-width:2}
+.lina .puls{fill:none;stroke:var(--o);stroke-width:4;stroke-linecap:round;stroke-dasharray:9 91;animation:puls 4.2s cubic-bezier(.45,0,.55,1) infinite}
+.lina .pyl{stroke:#fff;stroke-width:3}
+@keyframes puls{from{stroke-dashoffset:100}to{stroke-dashoffset:-9}}
+.hero .lead{font-size:clamp(18px,1.45vw,22px);line-height:1.5;max-width:33em;margin-top:22px;color:rgba(255,255,255,.93)}
+.hero .cta{display:flex;flex-wrap:wrap;align-items:center;gap:16px 30px;margin-top:34px}
+.hero .bok{font-size:16px;line-height:1.45;color:rgba(255,255,255,.88)}
+.hero .bok b{color:#fff;font-size:18px}
+.hero .bok a{text-decoration:none}
+
+/* separator: przęsło */
+.przeslo{display:block;width:100%;height:30px;color:var(--l)}
+.przeslo path{fill:none;stroke:currentColor;stroke-width:1.5;vector-effect:non-scaling-stroke}
+.przeslo circle{fill:var(--o)}
+
+/* sekcje */
+section{padding:clamp(64px,8vw,120px) 0}
+.sz{background:var(--g)}
+.hd{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:18px 40px;margin-bottom:clamp(30px,3.6vw,52px)}
+.hd p{max-width:34em;color:var(--s);font-size:18px}
+
+/* karty oferty */
+.tor{display:flex;gap:clamp(14px,1.6vw,24px);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;cursor:grab;padding-bottom:6px;overscroll-behavior-x:contain}
+.tor::-webkit-scrollbar{display:none}
+.tor.drag{cursor:grabbing;scroll-snap-type:none}
+.tor.drag *{pointer-events:none}
+.karta{flex:0 0 clamp(272px,calc((100% - 72px)/4),400px);scroll-snap-align:start;background:#fff;user-select:none;display:flex;flex-direction:column;border:1px solid var(--l);border-radius:14px;overflow:hidden}
+.foto{position:relative;aspect-ratio:4/3;overflow:hidden;background:#d9e1ea}
+.foto img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)}
+.karta:hover .foto img{transform:scale(1.04)}
+.karta .tx{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
+.karta p{margin-top:9px;color:var(--s);font-size:16px;line-height:1.55}
+.cena{margin-top:auto;padding-top:18px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;border-top:1px solid var(--g);margin-top:18px}
+.cena small{font-size:14px;color:var(--s)}
+.cena b{font-size:30px;letter-spacing:-.03em;color:var(--n);line-height:1}
+.cena span{font-size:15px;color:var(--s)}
+.nav{display:flex;gap:10px}
+.nav button{width:52px;height:52px;border:1px solid var(--l);background:#fff;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--t)}
+.nav button:hover{border-color:var(--b);color:var(--b)}
+.nav svg{width:20px;height:20px}
+.uwaga{margin-top:22px;font-size:14.5px;color:var(--s)}
+
+/* dostepnosc */
+.dost{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,90px);align-items:start}
+.dost .opis{margin-top:20px;font-size:18px;color:var(--s);max-width:32em}
+.plany{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
+.plan{background:#fff;border-radius:14px;padding:24px 24px 22px;border:1px solid var(--l)}
+.plan h3{font-size:19px}
+.plan .pr{margin-top:14px;font-size:42px;font-weight:700;letter-spacing:-.04em;color:var(--n);line-height:1}
+.plan .pr small{font-size:17px;font-weight:500;letter-spacing:0;color:var(--s)}
+.plan ul{list-style:none;margin:16px 0 0;padding:14px 0 0;border-top:1px solid var(--g);font-size:15.5px;color:var(--s)}
+.plan li+li{margin-top:4px}
+.plan li b{color:var(--t);font-weight:600}
+.form{background:#fff;border-radius:18px;padding:clamp(24px,3vw,40px);box-shadow:0 24px 60px rgba(10,34,64,.10)}
+.form h3{font-size:24px}
+.form p.f{margin-top:8px;color:var(--s);font-size:16px}
+.form label{display:block;margin-top:18px;font-weight:600;font-size:15px}
+.form input{display:block;width:100%;margin-top:7px;font:inherit;font-size:17px;padding:14px 16px;border:1px solid #c3cdd8;border-radius:10px;background:#fff;color:var(--t)}
+.form input:focus{outline:2px solid var(--b);outline-offset:1px;border-color:var(--b)}
+.form .dwa{display:grid;grid-template-columns:1.5fr 1fr;gap:14px}
+.form .btn{width:100%;margin-top:24px}
+.form .ok{margin-top:14px;font-size:15px;color:var(--b);min-height:1.5em}
+
+/* firmy - ciemna */
+.dk{background:var(--n);color:#fff}
+.dk .siatka{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,6vw,100px);align-items:start}
+.dk .lead2{font-size:clamp(18px,1.4vw,21px);color:rgba(255,255,255,.88);margin-top:22px;max-width:30em}
+.dk .ff{margin-top:34px;border-radius:14px;overflow:hidden;aspect-ratio:4/3}
+.dk .ff img{width:100%;height:100%;object-fit:cover}
+.grupy{display:grid;gap:0}
+.grupa{padding:28px 0;border-top:1px solid rgba(255,255,255,.18)}
+.grupa:last-of-type{border-bottom:1px solid rgba(255,255,255,.18)}
+.grupa h3{font-size:22px;display:flex;align-items:center;gap:12px}
+.grupa h3 .znak{width:30px;height:21px}
+.grupa ul{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 24px}
+.grupa li b{display:block;font-weight:600;font-size:17px;margin-bottom:3px}
+.grupa li span{color:rgba(255,255,255,.78);font-size:15.5px;line-height:1.5;display:block}
+.dk .btn{margin-top:34px}
+
+/* dlaczego */
+.pow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(20px,2.4vw,40px);margin-top:10px}
+.pow div{padding-top:22px;border-top:2px solid var(--n)}
+.pow .znak{display:block;margin-bottom:14px}
+.pow h3{font-size:21px}
+.pow p{margin-top:10px;color:var(--s);font-size:16.5px}
+.strefa{margin-top:clamp(48px,6vw,80px);background:var(--g);border-radius:18px;padding:clamp(24px,3vw,40px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:18px 40px}
+.strefa h3{font-size:clamp(22px,2vw,28px)}
+.strefa p{margin-top:6px;color:var(--s)}
+.strefa a{display:inline-flex;align-items:center;gap:10px;font-weight:700;text-decoration:none;color:#fff;background:var(--n);padding:15px 24px;border-radius:999px;white-space:nowrap}
+.strefa a:hover{background:var(--nd)}
+
+/* kontakt */
+.kont{display:grid;grid-template-columns:minmax(300px,.8fr) 1.2fr;gap:clamp(30px,4vw,70px);align-items:stretch}
+.dane{display:flex;flex-direction:column;gap:26px}
+.dane .tl{font-size:clamp(34px,3.3vw,48px);font-weight:700;text-decoration:none;color:var(--n);line-height:1.05;letter-spacing:-.03em}
+.dane .tl:hover{color:var(--b)}
+.dane dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:12px 22px;font-size:17px}
+.dane dt{color:var(--s)}
+.dane dd{margin:0;font-weight:500}
+.dane dd a{text-decoration-color:var(--l);text-underline-offset:3px}
+.godz{background:#fff;border-radius:12px;padding:20px 22px;display:flex;justify-content:space-between;gap:16px;align-items:center;font-size:17px}
+.godz b{font-size:22px;letter-spacing:-.02em}
+.mapa{position:relative;min-height:420px;background:#dde4ea;overflow:hidden;border-radius:18px}
+.mapa iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.mapa .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--s);font-size:15px}
+
+/* stopka */
+.stopka{background:var(--nd);color:rgba(255,255,255,.78);padding:48px 0 28px;font-size:15px}
+.stopka .g{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px 40px}
+.stopka .logo{color:#fff}
+.stopka .opis{margin-top:12px;max-width:26em}
+.stopka h4{margin:0 0 10px;color:#fff;font-size:15px;font-weight:600}
+.stopka a{text-decoration:none}
+.stopka a:hover{color:#fff}
+.stopka p+p{margin-top:4px}
+.stopka .dol{margin-top:34px;padding-top:20px;border-top:1px solid rgba(255,255,255,.16);display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center}
+.stopka .zr{font-size:12.5px;color:rgba(255,255,255,.58);margin-top:16px;line-height:1.5}
+.stopka .zr a{text-decoration:underline;text-underline-offset:2px}
+
+/* Wylinka - oficjalny znak */
+.wylinka-badge{display:inline-flex;align-items:center;gap:.4em;color:inherit;text-decoration:none;font-size:.875em;line-height:1;opacity:.85}
+.wylinka-badge:hover,.wylinka-badge:focus-visible{opacity:1}
+.wylinka-badge:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:2px}
+.wylinka-badge svg{width:18px;height:18px;flex:none;overflow:visible}
+.wylinka-badge b{font-weight:600}
+.wylinka-badge .wy-old{opacity:.45;transform-origin:40px 30px;transition:transform .32s cubic-bezier(.3,.7,.4,1),opacity .32s ease-out}
+.wylinka-badge .wy-pod{opacity:0;transition:opacity .2s ease-out .08s}
+.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:translate(9px,7px) rotate(9deg);opacity:0}
+.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:1}
+@media (prefers-reduced-motion:reduce){.wylinka-badge .wy-old,.wylinka-badge .wy-pod{transition:none}.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:none;opacity:.45}.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:0}}
+@media (prefers-reduced-motion:reduce){.lina .puls{animation:none;stroke-dasharray:none;stroke-width:2.5}html{scroll-behavior:auto}}
+
+/* responsywnosc */
+@media (max-width:1180px){.menu a{padding:10px 9px;font-size:15.5px}.top .wrap{gap:18px}}
+@media (max-width:1060px){
+  .menu,.top .tel{display:none}
+  .burger{display:flex}
+  .top.open .menu{display:flex;position:absolute;top:var(--hh);left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#fff;border-bottom:1px solid var(--l);box-shadow:0 18px 30px rgba(10,34,64,.12);padding:8px var(--gut) 20px}
+  .top.open .menu a{padding:15px 2px;font-size:19px;border-bottom:1px solid var(--g);border-radius:0}
+  .top.open .menu .mtel{display:flex}
+  .dk .siatka,.kont,.dost{grid-template-columns:1fr}
+  .pow{grid-template-columns:1fr 1fr}
+  .grupa ul{grid-template-columns:1fr 1fr}
+}
+.menu .mtel{display:none;margin-top:14px;justify-content:center;background:var(--ob);color:#fff!important;font-weight:700;border-radius:999px!important;border:0!important}
+@media (max-width:700px){
+  body{font-size:16.5px}
+  .hero picture img{object-position:50% 30%}
+  .hero:after{background:linear-gradient(180deg,rgba(10,34,64,.2) 0%,rgba(10,34,64,.5) 26%,rgba(10,34,64,.86) 50%,rgba(10,34,64,.96) 100%)}
+  .hero .in{padding:90px 0 34px}
+  .lina{height:40px;margin-bottom:12px}
+  h1{font-size:clamp(34px,10.2vw,46px)}
+  .hero .lead{margin-top:14px;font-size:17px}
+  .hero .cta{margin-top:26px;gap:16px}
+  .hero .btn{width:100%}
+  .nav{display:none}
+  .tor{margin-inline:calc(-1*var(--gut));padding-inline:var(--gut);scroll-padding-inline:var(--gut)}
+  .karta{flex-basis:80vw}
+  .plany{grid-template-columns:1fr 1fr;gap:10px}
+  .plan{padding:18px 16px}
+  .plan .pr{font-size:34px}
+  .form .dwa{grid-template-columns:1fr}
+  .grupa ul{grid-template-columns:1fr}
+  .pow{grid-template-columns:1fr}
+  .mapa{min-height:320px}
+  .stopka .g{grid-template-columns:1fr 1fr}
+  .stopka .g>div:first-child{grid-column:1/-1}
+  .godz{flex-direction:column;align-items:flex-start;gap:4px}
+  .strefa a{width:100%;justify-content:center}
+}
+@media (max-width:380px){.plany{grid-template-columns:1fr}.btn{font-size:17px;padding:16px 18px}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="znak" viewBox="0 0 34 24"><path d="M3 5Q17 31 31 5" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/><circle cx="3" cy="5" r="2.8" fill="currentColor"/><circle cx="31" cy="5" r="2.8" fill="currentColor"/><circle cx="17" cy="17.5" r="3.6" fill="#F76A0C"/></symbol></defs></svg>
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="WrocNet - strona główna"><svg class="znak" aria-hidden="true"><use href="#znak"/></svg>WrocNet</a>
+    <nav class="menu" id="menu" aria-label="Menu">
+      <a href="#oferta">Oferta dla domu</a>
+      <a href="#dostepnosc">Dostępność</a>
+      <a href="#firmy">Dla firm</a>
+      <a href="#dlaczego">Dlaczego my</a>
+      <a href="#kontakt">Kontakt</a>
+      <a class="sk" href="https://ibok.wrocnet.pl/" rel="noopener">Strefa klienta</a>
+      <a class="mtel" href="tel:+48717215151">Zadzwoń: 71 721 51 51</a>
+    </nav>
+    <a class="tel" href="tel:+48717215151"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6.2 2.5 4 3.1c-.9.3-1.4 1.1-1.3 2 .6 5.6 5.6 10.6 11.2 11.2.9.1 1.7-.4 2-1.3l.6-2.2-3.4-1.6-1.6 1.6c-1.9-.9-3.4-2.4-4.3-4.3l1.6-1.6z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>71 721 51 51</a>
+    <button class="burger" id="burger" aria-label="Otwórz menu" aria-expanded="false" aria-controls="menu"><i></i></button>
+  </div>
+</header>
+
+<main>
+<section class="hero" aria-label="WrocNet - internet i telewizja we Wrocławiu">
+  <picture>
+    <source media="(max-width:700px)" srcset="img/hero-m-480.webp 480w, img/hero-m-800.webp 800w" sizes="100vw" width="480" height="872">
+    <img src="img/hero-1600.webp" srcset="img/hero-1024.webp 1024w, img/hero-1600.webp 1600w, img/hero-2400.webp 2400w" sizes="100vw" width="1600" height="938" alt="Most Grunwaldzki we Wrocławiu o zmroku, liny mostu wiszącego odbite w Odrze" fetchpriority="high">
+  </picture>
+  <div class="in">
+    <svg class="lina" viewBox="0 0 560 58" aria-hidden="true"><path class="pyl" d="M4 0v58M556 0v58"/><path class="baza" d="M4 4C150 66 410 66 556 4"/><path class="puls" pathLength="100" d="M4 4C150 66 410 66 556 4"/></svg>
+    <h1>Internet i telewizja, które po prostu działają</h1>
+    <p class="lead">Lokalny operator z Wrocławia. Budujemy własną sieć światłowodową - podłączamy i działa. Dla domu i dla firm.</p>
+    <div class="cta">
+      <a class="btn" href="#dostepnosc">Sprawdź ofertę pod swój adres</a>
+      <p class="bok">BOK: <a href="tel:+48717215151"><b>71 721 51 51</b></a><br>pn-pt 9:00-17:00, ul. Podwale 57</p>
+    </div>
+  </div>
+</section>
+
+<section id="oferta">
+  <div class="wrap">
+    <div class="hd">
+      <h2>Oferta dla domu</h2>
+      <div class="nav" aria-hidden="true">
+        <button type="button" data-k="-1" tabindex="-1"><svg viewBox="0 0 20 20"><path d="M12.5 4 6.5 10l6 6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></button>
+        <button type="button" data-k="1" tabindex="-1"><svg viewBox="0 0 20 20"><path d="m7.5 4 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></button>
+      </div>
+    </div>
+    <div class="tor" id="tor">
+      <article class="karta">
+        <div class="foto"><img src="img/internet-480.webp" srcset="img/internet-480.webp 480w, img/internet-800.webp 800w" sizes="(max-width:700px) 80vw, 400px" width="480" height="360" loading="lazy" alt="Kobieta pracuje w domu na laptopie"></div>
+        <div class="tx"><h3>Internet światłowodowy</h3><p>Symetryczne łącze 500 Mb/s albo 1 Gb/s - tyle samo w pobieraniu, co w wysyłaniu. Router Wi-Fi 6, instalacja przez naszych techników.</p>
+          <div class="cena"><small>od</small><b>49 zł</b><span>/mies., umowa 24 mies.</span></div></div>
+      </article>
+      <article class="karta">
+        <div class="foto"><img src="img/pakiety-480.webp" srcset="img/pakiety-480.webp 480w, img/pakiety-800.webp 800w" sizes="(max-width:700px) 80vw, 400px" width="480" height="360" loading="lazy" alt="Kobieta z popcornem ogląda telewizję na kanapie"></div>
+        <div class="tx"><h3>Internet + telewizja</h3><p>Światłowód 300 Mb/s, 600 Mb/s lub 1 Gb/s i 122 kanały. Dekoder 4K, przewijanie kanałów i nagrywanie w chmurze.</p>
+          <div class="cena"><small>od</small><b>43 zł</b><span>/mies. przez 4 mies., potem 84,90 zł</span></div></div>
+      </article>
+      <article class="karta">
+        <div class="foto"><img src="img/tv-480.webp" srcset="img/tv-480.webp 480w, img/tv-800.webp 800w" sizes="(max-width:700px) 80vw, 400px" width="480" height="360" loading="lazy" alt="Pilot skierowany w telewizor z siatką kanałów"></div>
+        <div class="tx"><h3>Telewizja światłowodowa</h3><p>Pięć pakietów: od 72 do 200 kanałów, większość w HD. Pause TV, ulubione, profile domowników i nagrywanie w chmurze.</p>
+          <div class="cena"><small>od</small><b>29 zł</b><span>/mies. przez 4 mies., potem 44,90 zł</span></div></div>
+      </article>
+      <article class="karta">
+        <div class="foto"><img src="img/telefon-480.webp" srcset="img/telefon-480.webp 480w, img/telefon-800.webp 800w" sizes="(max-width:700px) 80vw, 400px" width="480" height="360" loading="lazy" alt="Dłoń dotyka ekranu z oceną usługi"></div>
+        <div class="tx"><h3>Telefon komórkowy</h3><p>Abonamenty No Limit: rozmowy i SMS-y bez limitu, pakiety danych do 25 GB. Przeniesienie numeru załatwiamy za Ciebie.</p>
+          <div class="cena"><small>od</small><b>16,90 zł</b><span>/mies., bez zobowiązań</span></div></div>
+      </article>
+    </div>
+    <p class="uwaga">Ceny z obecnej strony wrocnet.pl (stan na 16.11.2026). Ostateczna cena zależy od adresu i wybranej umowy.</p>
+  </div>
+</section>
+
+<section class="sz" id="dostepnosc">
+  <div class="wrap dost">
+    <div>
+      <h2>Sprawdź, czy podłączymy światłowód pod Twój adres</h2>
+      <p class="opis">Podaj ulicę i numer budynku - oddzwonimy z dostępną prędkością i ceną dla Twojego adresu. Aktywacja na umowie 24-miesięcznej kosztuje 1 zł zamiast 450 zł.</p>
+      <div class="plany">
+        <div class="plan"><h3>Internet 500</h3><p class="pr">49 zł <small>/mies.</small></p><ul><li><b>500/500 Mb/s</b></li><li>umowa 24 miesiące</li></ul></div>
+        <div class="plan"><h3>Internet 1000</h3><p class="pr">79 zł <small>/mies.</small></p><ul><li><b>1000/1000 Mb/s</b></li><li>umowa 24 miesiące</li></ul></div>
+      </div>
+    </div>
+    <form class="form" id="form" novalidate>
+      <h3>Zapytaj o dostępność</h3>
+      <p class="f">Odpowiadamy w godzinach pracy BOK, pn-pt 9:00-17:00.</p>
+      <div class="dwa">
+        <label>Ulica i numer<input name="ulica" autocomplete="street-address" placeholder="np. Podwale 57"></label>
+        <label>Miejscowość<input name="miasto" value="Wrocław" autocomplete="address-level2"></label>
+      </div>
+      <label>Telefon<input name="tel" type="tel" autocomplete="tel" placeholder="np. 600 000 000"></label>
+      <button class="btn" type="submit">Sprawdź dostępność</button>
+      <p class="ok" id="ok" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<section class="dk" id="firmy">
+  <div class="wrap siatka">
+    <div>
+      <h2>Internet i IT dla firm</h2>
+      <p class="lead2">W biznesie nie ma miejsca na przestoje. Dostarczamy łącza z gwarancją parametrów, budujemy sieci i opiekujemy się infrastrukturą - od małego biura po większe organizacje.</p>
+      <div class="ff"><img src="img/firma-480.webp" srcset="img/firma-480.webp 480w, img/firma-800.webp 720w" sizes="(max-width:1060px) 92vw, 520px" width="480" height="360" loading="lazy" alt="Mężczyzna z tabletem na tarasie biurowca"></div>
+    </div>
+    <div class="grupy">
+      <div class="grupa"><h3><svg class="znak" aria-hidden="true" style="color:#fff"><use href="#znak"/></svg>Internet dedykowany</h3>
+        <ul><li><b>Światłowód biznesowy</b><span>Symetryczne łącza do 10 Gb/s z gwarancją parametrów (SLA).</span></li><li><b>LTE/5G</b><span>Dla lokalizacji poza zasięgiem światłowodu.</span></li><li><b>Łącze zapasowe</b><span>Automatycznie przejmuje ruch, gdy główne ulegnie awarii.</span></li></ul></div>
+      <div class="grupa"><h3><svg class="znak" aria-hidden="true" style="color:#fff"><use href="#znak"/></svg>Usługi sieciowe</h3>
+        <ul><li><b>Sieci LAN/WAN</b><span>Projekt i wdrożenie dopasowane do skali firmy.</span></li><li><b>VPN</b><span>Bezpieczna praca zdalna z dowolnego miejsca.</span></li><li><b>Monitoring 24/7</b><span>Wykrywamy problemy, zanim wpłyną na Twoją pracę.</span></li></ul></div>
+      <div class="grupa"><h3><svg class="znak" aria-hidden="true" style="color:#fff"><use href="#znak"/></svg>Wsparcie IT</h3>
+        <ul><li><b>Helpdesk</b><span>Pomoc telefonicznie, zdalnie lub na miejscu.</span></li><li><b>Administracja</b><span>Serwery i urządzenia pod stałą opieką.</span></li><li><b>Ochrona</b><span>Firewalle, filtrowanie ruchu, ochrona przed DDoS.</span></li></ul></div>
+      <a class="btn" href="#kontakt">Zapytaj o ofertę dla firmy</a>
+    </div>
+  </div>
+</section>
+
+<section id="dlaczego">
+  <div class="wrap">
+    <div class="hd"><h2>Dlaczego klienci wybierają WrocNet</h2><p>Jesteśmy z Wami od ponad 15 lat. Sieć budujemy sami i pracujemy na sprzęcie wysokiej klasy.</p></div>
+    <div class="pow">
+      <div><svg class="znak" aria-hidden="true" style="color:#0D2B4E"><use href="#znak"/></svg><h3>Lokalny operator</h3><p>Jesteśmy blisko - reagujemy szybko i naprawdę odbieramy telefon.</p></div>
+      <div><svg class="znak" aria-hidden="true" style="color:#0D2B4E"><use href="#znak"/></svg><h3>Dopasowane usługi</h3><p>Dobieramy pakiet do Twoich potrzeb, a nie odwrotnie.</p></div>
+      <div><svg class="znak" aria-hidden="true" style="color:#0D2B4E"><use href="#znak"/></svg><h3>Stabilne łącze</h3><p>Minimalizujemy przerwy i dbamy o ciągłość działania.</p></div>
+      <div><svg class="znak" aria-hidden="true" style="color:#0D2B4E"><use href="#znak"/></svg><h3>Jasne zasady</h3><p>Bez ukrytych kosztów i drobnego druku w umowie.</p></div>
+    </div>
+    <div class="strefa">
+      <div><h3>Jesteś już naszym klientem?</h3><p>Faktury, płatności i zgłoszenia znajdziesz w Strefie Klienta.</p></div>
+      <a href="https://ibok.wrocnet.pl/" rel="noopener">Przejdź do Strefy Klienta</a>
+    </div>
+  </div>
+</section>
+
+<section class="sz" id="kontakt">
+  <div class="wrap">
+    <div class="hd"><h2>Kontakt i Biuro Obsługi Klienta</h2></div>
+    <div class="kont">
+      <div class="dane">
+        <a class="tl" href="tel:+48717215151">71 721 51 51</a>
+        <dl>
+          <dt>Adres</dt><dd>WrocNet Sp. z o.o.<br>ul. Podwale 57<br>50-039 Wrocław</dd>
+          <dt>E-mail</dt><dd><a href="mailto:bok@wrocnet.pl">bok@wrocnet.pl</a></dd>
+        </dl>
+        <div class="godz"><span>BOK czynne</span><b>pn-pt 9:00-17:00</b></div>
+      </div>
+      <div class="mapa" id="mapa" data-src="https://www.google.com/maps?q=Podwale+57,+50-039+Wroc%C5%82aw&amp;z=16&amp;output=embed">
+        <div class="ph">Mapa: ul. Podwale 57, Wrocław</div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="stopka">
+  <div class="wrap">
+    <div class="g">
+      <div>
+        <a class="logo" href="#" aria-label="WrocNet - do góry"><svg class="znak" aria-hidden="true" style="color:#fff"><use href="#znak"/></svg>WrocNet</a>
+        <p class="opis">Internet światłowodowy, telewizja i telefon we Wrocławiu. Usługi sieciowe i IT dla firm.</p>
+      </div>
+      <div>
+        <h4>Biuro Obsługi Klienta</h4>
+        <p>ul. Podwale 57</p>
+        <p>50-039 Wrocław</p>
+        <p>pn-pt 9:00-17:00</p>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <p><a href="tel:+48717215151">71 721 51 51</a></p>
+        <p><a href="mailto:bok@wrocnet.pl">bok@wrocnet.pl</a></p>
+        <p><a href="https://ibok.wrocnet.pl/" rel="noopener">Strefa klienta</a></p>
+      </div>
+    </div>
+    <div class="dol">
+      <span>&copy; 2026 WrocNet Sp. z o.o.</span>
+      <a class="wylinka-badge" href="https://wylinka.pl/?utm_source=wrocnet.pl&amp;utm_medium=stopka&amp;utm_campaign=wykonanie" rel="noopener" title="Strona wykonana przez Wylinka"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false" fill="currentColor"><path d="M9.8 22.8l-1.2-7.9 2.2-3.7 15.5 4.6-.5 1.5-7.2 5.5 4.7 15.6 5-15.6 7 0 4.1 12.7-4.2-.9-2.6 1.8-.8-2.2-5.3 15.6-4.3 0 .4 .2-2.1 2.8-1.3-1.1 1.1-1.4-3.1 .2-.1-1.7 2.2-.1-5.7-16.5-4.8 .6-.8 3.1 0 .5-.3 .5 .8 2.2-1.6 .5-.4-1.3-.8 1.6-1.5-.8 .8-1.6-1.4 .6-.6-1.6 2.3-.8 .2-.4 1.3-4.8 5.9-.8-2.4-6.9zM15.2 13.7l-.1-.4-.4 .8-.1 .8 .1 1 .1 .4 .3 .7 .3-.9 .1-.7 0-.8z"/><path class="wy-pod" d="M37.1 49.8l-4.5-13.3 2.6-1.8 4.2 .9 .9 2.8 3-9.7 0-.5 .1-.8 3.2-8.4 .5-1 .6-1 .9-1.1 1.3-1 1.1-.7 1.4-.5 1.4-.3 .7 0 .9 0 1.2 .3 1.4 .6 .8 .5 .7 .7 .6 .7 .5 .9 .3 .9 .1 .9 0 .8-.2 .9-.5 .9-.5 .6-.7 .5-.7 .3-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.6-.1-.6-.3-.7-.4-.5-.4-.4-.5-.3-.6-.3-.7 0-.7 .1-.6 .1-.5 .4-.5 .5-.3 .5-.2 .7-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1-2.1-2.8 .4-.2z"/><path class="wy-old" d="M40.8 50l.4-.2-4.1 0-4.2-12.5 2.5-1.7 4.3 .9 .6 1.9 .6-1.6 0-.3 2.4-7.8 0-.5 .1-.8 3.2-8.4 .4-.8 .6-.9 .9-1.2 .9-.9 1.3-.8 1.4-.6 1.2-.3 1.4-.1 1.3 .1 .6 .2 .8 .3 1.1 .6 .9 .7 .7 .9 .5 .9 .3 .9 .1 1.1-.1 .9-.3 .9-.4 .7-.6 .7-.6 .4-.6 .2-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.5-.1-.6-.2-.6-.3-.5-.4-.5-.5-.3-.6-.3-.7-.1-.6 0-.6 .1-.6 .3-.6 .5-.3 .4-.2 .5-.1 .5-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1zM49.6 17.1l.6 1.7-1.5 1.9 .4 .4 1.8-2.1-.7-2.1zM48.1 28.3l.5 1.8-1.7 1.8 .4 .4 1.9-2-.6-2.2zM37.9 41.7l1.7-1.5-.4-.4-1.7 1.4zM42.6 38.7l-1.5 2.8 1.1 2-1.3 2.6 .5 .2 1.5-2.8-1.1-2 1.4-2.5z"/></svg><span>wykonanie: <b>Wylinka</b></span></a>
+    </div>
+    <p class="zr">Podgląd koncepcji strony. Zdjęcie na pierwszym ekranie (poglądowe): Most Grunwaldzki, autor Jar.ciurus, <a href="https://commons.wikimedia.org/wiki/File:Wroclaw-_Most_Grunwaldzki.jpg" rel="noopener">Wikimedia Commons</a>, licencja CC BY-SA 3.0 PL. Pozostałe zdjęcia i treści z wrocnet.pl.</p>
+  </div>
+</footer>
+<script src="app.js" defer></script>
+</body>
+</html>
