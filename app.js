@@ -19,6 +19,8 @@
     tor.addEventListener('dragstart',function(e){e.preventDefault()});
     document.querySelectorAll('.nav button').forEach(function(b){b.addEventListener('click',function(){tor.scrollBy({left:krok()*(+b.dataset.k),behavior:'smooth'})})});
   }
+  var sel=document.getElementById('pakiet');
+  document.querySelectorAll('[data-pakiet]').forEach(function(a){a.addEventListener('click',function(){if(!sel)return;for(var i=0;i<sel.options.length;i++){if(sel.options[i].text===a.dataset.pakiet){sel.selectedIndex=i;break}}})});
   var f=document.getElementById('form');
   if(f){f.addEventListener('submit',function(e){e.preventDefault();document.getElementById('ok').textContent='To podgląd strony - na docelowej wersji formularz wyśle zapytanie do BOK.'})}
   var m=document.getElementById('mapa');

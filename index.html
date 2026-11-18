@@ -103,14 +103,6 @@ section{padding:clamp(64px,8vw,120px) 0}
 /* dostepnosc */
 .dost{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,90px);align-items:start}
 .dost .opis{margin-top:20px;font-size:18px;color:var(--s);max-width:32em}
-.plany{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
-.plan{background:#fff;border-radius:14px;padding:24px 24px 22px;border:1px solid var(--l)}
-.plan h3{font-size:19px}
-.plan .pr{margin-top:14px;font-size:42px;font-weight:700;letter-spacing:-.04em;color:var(--n);line-height:1}
-.plan .pr small{font-size:17px;font-weight:500;letter-spacing:0;color:var(--s)}
-.plan ul{list-style:none;margin:16px 0 0;padding:14px 0 0;border-top:1px solid var(--g);font-size:15.5px;color:var(--s)}
-.plan li+li{margin-top:4px}
-.plan li b{color:var(--t);font-weight:600}
 .form{background:#fff;border-radius:18px;padding:clamp(24px,3vw,40px);box-shadow:0 24px 60px rgba(10,34,64,.10)}
 .form h3{font-size:24px}
 .form p.f{margin-top:8px;color:var(--s);font-size:16px}
@@ -120,6 +112,13 @@ section{padding:clamp(64px,8vw,120px) 0}
 .form .dwa{display:grid;grid-template-columns:1.5fr 1fr;gap:14px}
 .form .btn{width:100%;margin-top:24px}
 .form .ok{margin-top:14px;font-size:15px;color:var(--b);min-height:1.5em}
+
+.kroki{list-style:none;margin:34px 0 0;padding:0;counter-reset:k;display:grid;gap:0}
+.kroki li{counter-increment:k;display:grid;grid-template-columns:52px 1fr;column-gap:16px;padding:18px 0;border-top:1px solid var(--l)}
+.kroki li:last-child{border-bottom:1px solid var(--l)}
+.kroki li:before{content:counter(k);grid-row:1/3;font-size:40px;font-weight:700;line-height:1;letter-spacing:-.04em;color:var(--o)}
+.kroki b{font-size:19px}
+.kroki span{color:var(--s);font-size:16px}
 
 /* firmy - ciemna */
 .dk{background:var(--n);color:#fff}
@@ -213,6 +212,40 @@ section{padding:clamp(64px,8vw,120px) 0}
 @keyframes ont{0%,4%{opacity:.45}8%{opacity:1}30%,100%{opacity:.45}}
 .hero:after{z-index:2}
 
+
+/* cennik */
+.gr{font-size:clamp(21px,1.7vw,25px);margin:0 0 18px}
+.pks+.gr{margin-top:clamp(40px,4vw,56px)}
+.pks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.6vw,24px)}
+.pk{background:#fff;border:1px solid var(--l);border-radius:14px;padding:26px 24px 24px;display:flex;flex-direction:column}
+.pk h3{font-size:22px}
+.pk .po{margin-top:6px;color:var(--s);font-size:16px;line-height:1.45}
+.sp{display:block;width:100%;max-width:300px;height:26px;margin:22px 0 4px;overflow:visible}
+.sp .sb{stroke:var(--l);stroke-width:3;fill:none;stroke-linecap:round}
+.sp .so{stroke:var(--o);stroke-width:4;fill:none;stroke-linecap:round}
+.sp .sd{fill:none;stroke:var(--n);stroke-width:2.2;stroke-linejoin:round}
+.sp .sk2{fill:var(--o)}
+.pc{display:flex;align-items:flex-end;gap:10px;margin-top:18px;padding-top:18px;border-top:1px solid var(--g)}
+.pc b{font-size:clamp(44px,3.6vw,54px);line-height:.9;letter-spacing:-.045em;color:var(--n)}
+.pc span{font-size:14.5px;line-height:1.25;color:var(--s)}
+.pz{margin-top:22px;display:flex;justify-content:center;align-items:center;min-height:50px;padding:12px 18px;border:2px solid var(--n);border-radius:10px;font-weight:700;text-decoration:none;color:var(--n);transition:background .2s,color .2s}
+.pz:hover{background:var(--n);color:#fff}
+.pk.ind{background:var(--n);border-color:var(--n);color:#fff}
+.pk.ind .po{color:rgba(255,255,255,.8)}
+.pk.ind .pi{margin-top:auto;padding-top:20px;font-size:clamp(24px,2vw,28px);font-weight:700;line-height:1.15;letter-spacing:-.02em;border-top:1px solid rgba(255,255,255,.18)}
+.ind .po{margin-bottom:22px}
+.pk.ind .pz{background:var(--ob);border-color:var(--ob);color:#fff}
+.pk.ind .pz:hover{background:var(--ob2);border-color:var(--ob2)}
+.tvb{margin-top:clamp(28px,3vw,40px);background:#fff;border-radius:14px;padding:20px 24px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px 30px;border:1px solid var(--l)}
+.tvb p{color:var(--s);max-width:46em}
+.tvb b{color:var(--t)}
+.tvb a{font-weight:700;color:var(--b);text-decoration:none;white-space:nowrap}
+.uwaga a{color:var(--b)}
+.form select{display:block;width:100%;margin-top:7px;font:inherit;font-size:17px;padding:14px 16px;border:1px solid #c3cdd8;border-radius:10px;background:#fff;color:var(--t)}
+.form select:focus{outline:2px solid var(--b);outline-offset:1px;border-color:var(--b)}
+@media (max-width:1060px){.pks{grid-template-columns:1fr 1fr}.pk.ind{grid-column:1/-1}}
+@media (max-width:700px){.pks{grid-template-columns:1fr;gap:12px}.pk{padding:20px 18px;display:grid;grid-template-columns:1fr auto;column-gap:12px;align-items:start}.pk>*{grid-column:1/-1}.pk h3,.pk .po{grid-column:1}.pk .pc{grid-column:2;grid-row:1/3;margin:0;padding:0;border:0;align-self:center}.pc b{font-size:36px}.sp{margin:14px 0 0;max-width:none;height:22px}.pz{margin-top:16px;min-height:48px}.ind .po{margin-bottom:16px}.pk.ind .pi{padding-top:16px}.tvb a{white-space:normal}.pks+.gr{margin-top:36px}}
+
 /* responsywnosc */
 @media (max-width:1180px){.menu a{padding:10px 9px;font-size:15.5px}.top .wrap{gap:18px}}
 @media (max-width:1060px){
@@ -241,10 +274,7 @@ section{padding:clamp(64px,8vw,120px) 0}
   .nav{display:none}
   .tor{margin-inline:calc(-1*var(--gut));padding-inline:var(--gut);scroll-padding-inline:var(--gut)}
   .karta{flex-basis:80vw}
-  .plany{grid-template-columns:1fr 1fr;gap:10px}
-  .plan{padding:18px 16px}
-  .plan .pr{font-size:34px}
-  .form .dwa{grid-template-columns:1fr}
+        .form .dwa{grid-template-columns:1fr}
   .grupa ul{grid-template-columns:1fr}
   .pow{grid-template-columns:1fr}
   .mapa{min-height:320px}
@@ -253,8 +283,7 @@ section{padding:clamp(64px,8vw,120px) 0}
   .godz{flex-direction:column;align-items:flex-start;gap:4px}
   .strefa a{width:100%;justify-content:center}
 }
-@media (max-width:380px){.plany{grid-template-columns:1fr}.btn{font-size:17px;padding:16px 18px}}
-</style>
+@media (max-width:380px){</style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="znak" viewBox="0 0 34 24"><path d="M1.5 21.5H10.5M10.5 21.5V11.5L20 3.5L29.5 11.5V21.5H10.5" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="1.8" cy="21.5" r="1.6" fill="currentColor"/><circle cx="20" cy="15" r="3.6" fill="#F76A0C"/></symbol></defs></svg>
@@ -263,6 +292,7 @@ section{padding:clamp(64px,8vw,120px) 0}
     <a class="logo" href="#" aria-label="WrocNet - strona główna"><svg class="znak" aria-hidden="true"><use href="#znak"/></svg>WrocNet</a>
     <nav class="menu" id="menu" aria-label="Menu">
       <a href="#oferta">Oferta dla domu</a>
+      <a href="#cennik">Cennik</a>
       <a href="#dostepnosc">Dostępność</a>
       <a href="#firmy">Dla firm</a>
       <a href="#dlaczego">Dlaczego my</a>
@@ -301,39 +331,57 @@ section{padding:clamp(64px,8vw,120px) 0}
     </div>
     <div class="tor" id="tor">
       <article class="karta">
-        <div class="foto"><img src="img/internet-480.webp" srcset="img/internet-480.webp 480w, img/internet-640.webp 640w, img/internet-800.webp 800w" sizes="(max-width:700px) 80vw, 400px" width="480" height="360" loading="lazy" alt="Kobieta pracuje w domu na laptopie"></div>
-        <div class="tx"><h3>Internet światłowodowy</h3><p>Symetryczne łącze 500 Mb/s albo 1 Gb/s - tyle samo w pobieraniu, co w wysyłaniu. Router Wi-Fi 6, instalacja przez naszych techników.</p>
-          <div class="cena"><small>od</small><b>49 zł</b><span>/mies., umowa 24 mies.</span></div></div>
+        <div class="foto"><img src="img/internet-480.webp" srcset="img/internet-480.webp 480w, img/internet-640.webp 640w, img/internet-800.webp 800w" sizes="(max-width:700px) 80vw, 400px" width="480" height="360" loading="lazy" alt="Mężczyzna rozmawia przez telefon z laptopem na kanapie"></div>
+        <div class="tx"><h3>Internet światłowodowy</h3><p>Trzy prędkości do wyboru: 300 Mb/s, 600 Mb/s albo 1000 Mb/s. Instalacja przez naszych techników.</p>
+          <div class="cena"><small>od</small><b>79 zł</b><span>/mies. brutto</span></div></div>
       </article>
       <article class="karta">
-        <div class="foto"><img src="img/pakiety-480.webp" srcset="img/pakiety-480.webp 480w, img/pakiety-640.webp 640w, img/pakiety-800.webp 800w" sizes="(max-width:700px) 80vw, 400px" width="480" height="360" loading="lazy" alt="Kobieta z popcornem ogląda telewizję na kanapie"></div>
-        <div class="tx"><h3>Internet + telewizja</h3><p>Światłowód 300 Mb/s, 600 Mb/s lub 1 Gb/s i 122 kanały. Dekoder 4K, przewijanie kanałów i nagrywanie w chmurze.</p>
-          <div class="cena"><small>od</small><b>43 zł</b><span>/mies. przez 4 mies., potem 84,90 zł</span></div></div>
+        <div class="foto"><img src="img/pakiety-480.webp" srcset="img/pakiety-480.webp 480w, img/pakiety-640.webp 640w, img/pakiety-800.webp 800w" sizes="(max-width:700px) 80vw, 400px" width="480" height="360" loading="lazy" alt="Para gra na konsoli w salonie"></div>
+        <div class="tx"><h3>Internet + telewizja</h3><p>Światłowód 300 Mb/s albo 600 Mb/s razem z pakietem TV Ekonomiczny - jedna usługa, jeden rachunek.</p>
+          <div class="cena"><small>od</small><b>99 zł</b><span>/mies. brutto</span></div></div>
       </article>
       <article class="karta">
-        <div class="foto"><img src="img/tv-480.webp" srcset="img/tv-480.webp 480w, img/tv-640.webp 640w, img/tv-800.webp 800w" sizes="(max-width:700px) 80vw, 400px" width="480" height="360" loading="lazy" alt="Pilot skierowany w telewizor z siatką kanałów"></div>
+        <div class="foto"><img src="img/tv-480.webp" srcset="img/tv-480.webp 480w, img/tv-640.webp 640w, img/tv-800.webp 800w" sizes="(max-width:700px) 80vw, 400px" width="480" height="360" loading="lazy" alt="Mama z synem oglądają telewizję na kanapie"></div>
         <div class="tx"><h3>Telewizja światłowodowa</h3><p>Pięć pakietów: od 72 do 200 kanałów, większość w HD. Pause TV, ulubione, profile domowników i nagrywanie w chmurze.</p>
           <div class="cena"><small>od</small><b>29 zł</b><span>/mies. przez 4 mies., potem 44,90 zł</span></div></div>
       </article>
       <article class="karta">
-        <div class="foto"><img src="img/telefon-480.webp" srcset="img/telefon-480.webp 480w, img/telefon-640.webp 640w, img/telefon-800.webp 800w" sizes="(max-width:700px) 80vw, 400px" width="480" height="360" loading="lazy" alt="Dłoń dotyka ekranu z oceną usługi"></div>
+        <div class="foto"><img src="img/telefon-480.webp" srcset="img/telefon-480.webp 480w, img/telefon-640.webp 640w, img/telefon-800.webp 800w" sizes="(max-width:700px) 80vw, 400px" width="480" height="360" loading="lazy" alt="Kobieta korzysta ze smartfona w domu"></div>
         <div class="tx"><h3>Telefon komórkowy</h3><p>Abonamenty No Limit: rozmowy i SMS-y bez limitu, pakiety danych do 25 GB. Przeniesienie numeru załatwiamy za Ciebie.</p>
           <div class="cena"><small>od</small><b>16,90 zł</b><span>/mies., bez zobowiązań</span></div></div>
       </article>
     </div>
-    <p class="uwaga">Ceny z obecnej strony wrocnet.pl (stan na 16.11.2026). Ostateczna cena zależy od adresu i wybranej umowy.</p>
+    <p class="uwaga">Pełny cennik internetu i pakietów znajdziesz <a href="#cennik">poniżej</a>.</p>
   </div>
 </section>
 
-<section class="sz" id="dostepnosc">
+<section class="sz" id="cennik">
+  <div class="wrap">
+    <div class="hd"><h2>Cennik internetu i pakietów</h2><p>Wszystkie ceny są cenami brutto za miesiąc. Prędkość dostępną pod Twoim adresem potwierdzimy po zgłoszeniu.</p></div>
+    <h3 class="gr">Internet światłowodowy</h3>
+    <div class="pks">
+      <article class="pk"><h3>Internet 300</h3><p class="po">Światłowód 300 Mb/s</p><svg class="sp" viewBox="0 0 300 26" preserveAspectRatio="xMinYMid meet" aria-hidden="true"><path class="sb" d="M4 21H262"/><path class="so" d="M4 21H81"/><path class="sd" d="M262 21V12L279 1L296 12V21H262"/><circle class="sk2" cx="279" cy="14" r="3.6"/></svg><p class="pc"><b>79 zł</b><span>/mies.<br>brutto</span></p><a class="pz" href="#dostepnosc" data-pakiet="Internet 300 - 79 zł/mies.">Wybieram ten pakiet</a></article>
+      <article class="pk"><h3>Internet 600</h3><p class="po">Światłowód 600 Mb/s</p><svg class="sp" viewBox="0 0 300 26" preserveAspectRatio="xMinYMid meet" aria-hidden="true"><path class="sb" d="M4 21H262"/><path class="so" d="M4 21H159"/><path class="sd" d="M262 21V12L279 1L296 12V21H262"/><circle class="sk2" cx="279" cy="14" r="3.6"/></svg><p class="pc"><b>89 zł</b><span>/mies.<br>brutto</span></p><a class="pz" href="#dostepnosc" data-pakiet="Internet 600 - 89 zł/mies.">Wybieram ten pakiet</a></article>
+      <article class="pk"><h3>Internet 1000</h3><p class="po">Światłowód 1000 Mb/s</p><svg class="sp" viewBox="0 0 300 26" preserveAspectRatio="xMinYMid meet" aria-hidden="true"><path class="sb" d="M4 21H262"/><path class="so" d="M4 21H262"/><path class="sd" d="M262 21V12L279 1L296 12V21H262"/><circle class="sk2" cx="279" cy="14" r="3.6"/></svg><p class="pc"><b>109 zł</b><span>/mies.<br>brutto</span></p><a class="pz" href="#dostepnosc" data-pakiet="Internet 1000 - 109 zł/mies.">Wybieram ten pakiet</a></article>
+    </div>
+    <h3 class="gr">Internet z telewizją</h3>
+    <div class="pks">
+      <article class="pk"><h3>Internet 300 + TV</h3><p class="po">300 Mb/s i pakiet TV Ekonomiczny</p><svg class="sp" viewBox="0 0 300 26" preserveAspectRatio="xMinYMid meet" aria-hidden="true"><path class="sb" d="M4 21H262"/><path class="so" d="M4 21H81"/><path class="sd" d="M262 21V12L279 1L296 12V21H262"/><circle class="sk2" cx="279" cy="14" r="3.6"/></svg><p class="pc"><b>99 zł</b><span>/mies.<br>brutto</span></p><a class="pz" href="#dostepnosc" data-pakiet="Internet 300 + TV Ekonomiczny - 99 zł/mies.">Wybieram ten pakiet</a></article>
+      <article class="pk"><h3>Internet 600 + TV</h3><p class="po">600 Mb/s i pakiet TV Ekonomiczny</p><svg class="sp" viewBox="0 0 300 26" preserveAspectRatio="xMinYMid meet" aria-hidden="true"><path class="sb" d="M4 21H262"/><path class="so" d="M4 21H159"/><path class="sd" d="M262 21V12L279 1L296 12V21H262"/><circle class="sk2" cx="279" cy="14" r="3.6"/></svg><p class="pc"><b>119 zł</b><span>/mies.<br>brutto</span></p><a class="pz" href="#dostepnosc" data-pakiet="Internet 600 + TV Ekonomiczny - 119 zł/mies.">Wybieram ten pakiet</a></article>
+      <article class="pk ind"><h3>Internet + TV + telefon</h3><p class="po">Światłowód, telewizja i abonament komórkowy w jednym pakiecie.</p>
+        <p class="pi">Cena ustalana indywidualnie - zapytaj</p>
+        <a class="pz" href="#dostepnosc" data-pakiet="Internet + TV + telefon - zapytanie o cenę">Zapytaj o cenę</a></article>
+    </div>
+    <div class="tvb"><p><b>Sama telewizja</b> od 29 zł/mies. przez 4 mies., potem 44,90 zł. Pięć pakietów: od 72 do 200 kanałów, większość w HD.</p><a href="tel:+48717215151">Zapytaj w BOK: 71 721 51 51</a></div>
+  </div>
+</section>
+
+<section id="dostepnosc">
   <div class="wrap dost">
     <div>
       <h2>Sprawdź, czy podłączymy światłowód pod Twój adres</h2>
-      <p class="opis">Podaj ulicę i numer budynku - oddzwonimy z dostępną prędkością i ceną dla Twojego adresu. Aktywacja na umowie 24-miesięcznej kosztuje 1 zł zamiast 450 zł.</p>
-      <div class="plany">
-        <div class="plan"><h3>Internet 500</h3><p class="pr">49 zł <small>/mies.</small></p><ul><li><b>500/500 Mb/s</b></li><li>umowa 24 miesiące</li></ul></div>
-        <div class="plan"><h3>Internet 1000</h3><p class="pr">79 zł <small>/mies.</small></p><ul><li><b>1000/1000 Mb/s</b></li><li>umowa 24 miesiące</li></ul></div>
-      </div>
+      <p class="opis">Podaj ulicę i numer budynku - oddzwonimy z dostępną prędkością i ceną dla Twojego adresu.</p>
+      <ol class="kroki"><li><b>Zostawiasz adres i telefon</b><span>Wystarczy ulica, numer budynku i miejscowość.</span></li><li><b>Oddzwaniamy z ofertą</b><span>Potwierdzamy prędkość i cenę dla Twojego adresu.</span></li><li><b>Podłączamy</b><span>Instalację wykonują nasi technicy.</span></li></ol>
     </div>
     <form class="form" id="form" novalidate>
       <h3>Zapytaj o dostępność</h3>
@@ -342,6 +390,7 @@ section{padding:clamp(64px,8vw,120px) 0}
         <label>Ulica i numer<input name="ulica" autocomplete="street-address" placeholder="np. Podwale 57"></label>
         <label>Miejscowość<input name="miasto" autocomplete="address-level2" placeholder="np. Wrocław"></label>
       </div>
+      <label>Pakiet<select name="pakiet" id="pakiet"><option value="">Jeszcze nie wiem - doradźcie</option><option>Internet 300 - 79 zł/mies.</option><option>Internet 600 - 89 zł/mies.</option><option>Internet 1000 - 109 zł/mies.</option><option>Internet 300 + TV Ekonomiczny - 99 zł/mies.</option><option>Internet 600 + TV Ekonomiczny - 119 zł/mies.</option><option>Internet + TV + telefon - zapytanie o cenę</option><option>Telewizja</option><option>Telefon komórkowy</option></select></label>
       <label>Telefon<input name="tel" type="tel" autocomplete="tel" placeholder="np. 600 000 000"></label>
       <button class="btn" type="submit">Sprawdź dostępność</button>
       <p class="ok" id="ok" role="status"></p>
@@ -354,7 +403,7 @@ section{padding:clamp(64px,8vw,120px) 0}
     <div>
       <h2>Internet i IT dla firm</h2>
       <p class="lead2">W biznesie nie ma miejsca na przestoje. Dostarczamy łącza z gwarancją parametrów, budujemy sieci i opiekujemy się infrastrukturą - od małego biura po większe organizacje.</p>
-      <div class="ff"><img src="img/firma-480.webp" srcset="img/firma-480.webp 480w, img/firma-800.webp 720w" sizes="(max-width:1060px) 92vw, 520px" width="480" height="360" loading="lazy" alt="Mężczyzna z tabletem na tarasie biurowca"></div>
+      <div class="ff"><img src="img/firma-480.webp" srcset="img/firma-480.webp 480w, img/firma-800.webp 720w" sizes="(max-width:1060px) 92vw, 520px" width="480" height="360" loading="lazy" alt="Zespół przy komputerze w biurze"></div>
     </div>
     <div class="grupy">
       <div class="grupa"><h3><svg class="znak" aria-hidden="true" style="color:#fff"><use href="#znak"/></svg>Internet dedykowany</h3>
@@ -428,7 +477,7 @@ section{padding:clamp(64px,8vw,120px) 0}
       <span>&copy; 2026 WrocNet Sp. z o.o.</span>
       <a class="wylinka-badge" href="https://wylinka.pl/?utm_source=wrocnet.pl&amp;utm_medium=stopka&amp;utm_campaign=wykonanie" rel="noopener" title="Strona wykonana przez Wylinka"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false" fill="currentColor"><path d="M9.8 22.8l-1.2-7.9 2.2-3.7 15.5 4.6-.5 1.5-7.2 5.5 4.7 15.6 5-15.6 7 0 4.1 12.7-4.2-.9-2.6 1.8-.8-2.2-5.3 15.6-4.3 0 .4 .2-2.1 2.8-1.3-1.1 1.1-1.4-3.1 .2-.1-1.7 2.2-.1-5.7-16.5-4.8 .6-.8 3.1 0 .5-.3 .5 .8 2.2-1.6 .5-.4-1.3-.8 1.6-1.5-.8 .8-1.6-1.4 .6-.6-1.6 2.3-.8 .2-.4 1.3-4.8 5.9-.8-2.4-6.9zM15.2 13.7l-.1-.4-.4 .8-.1 .8 .1 1 .1 .4 .3 .7 .3-.9 .1-.7 0-.8z"/><path class="wy-pod" d="M37.1 49.8l-4.5-13.3 2.6-1.8 4.2 .9 .9 2.8 3-9.7 0-.5 .1-.8 3.2-8.4 .5-1 .6-1 .9-1.1 1.3-1 1.1-.7 1.4-.5 1.4-.3 .7 0 .9 0 1.2 .3 1.4 .6 .8 .5 .7 .7 .6 .7 .5 .9 .3 .9 .1 .9 0 .8-.2 .9-.5 .9-.5 .6-.7 .5-.7 .3-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.6-.1-.6-.3-.7-.4-.5-.4-.4-.5-.3-.6-.3-.7 0-.7 .1-.6 .1-.5 .4-.5 .5-.3 .5-.2 .7-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1-2.1-2.8 .4-.2z"/><path class="wy-old" d="M40.8 50l.4-.2-4.1 0-4.2-12.5 2.5-1.7 4.3 .9 .6 1.9 .6-1.6 0-.3 2.4-7.8 0-.5 .1-.8 3.2-8.4 .4-.8 .6-.9 .9-1.2 .9-.9 1.3-.8 1.4-.6 1.2-.3 1.4-.1 1.3 .1 .6 .2 .8 .3 1.1 .6 .9 .7 .7 .9 .5 .9 .3 .9 .1 1.1-.1 .9-.3 .9-.4 .7-.6 .7-.6 .4-.6 .2-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.5-.1-.6-.2-.6-.3-.5-.4-.5-.5-.3-.6-.3-.7-.1-.6 0-.6 .1-.6 .3-.6 .5-.3 .4-.2 .5-.1 .5-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1zM49.6 17.1l.6 1.7-1.5 1.9 .4 .4 1.8-2.1-.7-2.1zM48.1 28.3l.5 1.8-1.7 1.8 .4 .4 1.9-2-.6-2.2zM37.9 41.7l1.7-1.5-.4-.4-1.7 1.4zM42.6 38.7l-1.5 2.8 1.1 2-1.3 2.6 .5 .2 1.5-2.8-1.1-2 1.4-2.5z"/></svg><span>wykonanie: <b>Wylinka</b></span></a>
     </div>
-    <p class="zr">Podgląd koncepcji strony. Ilustracja osiedla: projekt własny. Pozostałe zdjęcia i treści z wrocnet.pl.</p>
+    <p class="zr">Wersja robocza strony. Ilustracja osiedla: projekt własny. Zdjęcia: Vitaly Gariev / <a href="https://unsplash.com/license" rel="noopener">Unsplash</a>.</p>
   </div>
 </footer>
 <script src="app.js" defer></script>
